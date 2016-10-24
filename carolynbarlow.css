@@ -31,6 +31,7 @@ a {
   margin-top: 30px;
 }
 
+
 #home-link img {
   align:left;
 }
@@ -40,12 +41,17 @@ a {
   padding:10px;
 }
 
-#thumbnails > span > img {
+#thumbnails img {
   cursor:pointer;
+  max-height: 90px;
 }
 
 #carousel table {
   margin:auto;
+}
+
+#carousel img {
+  max-height: 550px;
 }
 
 #thumbnails span.sold {
