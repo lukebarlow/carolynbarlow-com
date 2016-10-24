@@ -1,0 +1,61 @@
+body {
+  background-color:black;
+  font-family:Times New Roman, serif;
+  color:white;
+  font-size:16pt;
+}
+
+a {
+  color:white;
+  text-decoration: none;
+}
+
+.section {
+  display:inline-block;
+  margin:10px;
+}
+
+.section span {
+  display:inline-block;
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.section img {
+  border:1pt solid white;
+}
+
+#thumbnails, #home-link {
+  width: calc(100% - 80px);
+  text-align:left;
+  margin-top: 30px;
+}
+
+#home-link img {
+  align:left;
+}
+
+#thumbnails > span {
+  display:inline-block;
+  padding:10px;
+}
+
+#thumbnails > span > img {
+  cursor:pointer;
+}
+
+#carousel table {
+  margin:auto;
+}
+
+#thumbnails span.sold {
+  padding-right: 0px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  position: relative;
+  left: -5px;
+  top: 5px;
+}

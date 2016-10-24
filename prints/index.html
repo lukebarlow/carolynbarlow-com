@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <title>Glass and Prints by Carolyn Barlow</title>
+    <link rel="stylesheet" type="text/css" href="../carolynbarlow.css"></link>
+    <link rel="shortcut icon" href="../images/bird_right_icon.gif" type="image">
+    <script src="../d3.min.js"></script>
+    <script>
+ 
+    var images = [
+        'fox.jpg',
+        'pink-dog.jpg',
+        'divers.jpg',
+        'blue-celtic-twirls.jpg',
+        'buzzard.jpg',
+        'celtic-heron.jpg',
+        'celtic-twirls.jpg',
+        'dog-and-bird.jpg',
+        'dog-in-the-forest.jpg',
+        'dordogne.jpg',
+        'dove.jpg',
+        'doves-and-church.jpg',
+        'flamans-rouge.jpg',
+        'gold-plant.jpg',
+        'grasses-glass-print.jpg',
+        'greek-goats.jpg',
+        'horse.jpg',
+        'lady-and-bird.jpg',
+        'light-through-trees.jpg',
+        'man-and-donkey.jpg',
+        'oak-leaf.jpg',
+        'old-tree.jpg',
+        'plant.jpg',
+        'running-deer.jpg',
+        'strange-bird.jpg',
+        'swallow.jpg',
+        'three-running-dogs.jpg',
+        'two-dogs.jpg',
+        'two-doves.jpg'
+    ]
+
+
+    var index = 0;
+   
+function init(){
+
+    d3.select('#thumbnails')
+        .selectAll('img')
+        .data(images)
+        .enter()
+        .append('span')
+        .append('img')
+        .attr('src', function(d){return 'thumbnails/' + d})
+        .on('click', function(d, i){
+            index = i
+            d3.select('#thumbnails').style('display','none')
+            d3.select('#carousel').style('display','block')
+            d3.select('#centreImage').attr('src', 'images/' + d)
+            updateBirdVisibility()
+
+            d3.select('#home-link a').on('click', function(){
+                d3.event.preventDefault()
+                d3.select('#thumbnails').style('display','block')
+                d3.select('#carousel').style('display','none')
+                d3.select('#home-link a').on('click', function(){})
+            })
+
+        })
+
+  d3.select('#leftBird').on('click', function(){
+      index--
+      if (index >= 0){
+          d3.select('#centreImage').attr('src', 'images/' + images[index])
+      }
+      updateBirdVisibility()
+  })
+
+  d3.select('#rightBird').on('click', function(){
+      index++
+      if (index <= images.length - 1){
+          d3.select('#centreImage').attr('src', 'images/' + images[index])
+      }
+      updateBirdVisibility()
+  })
+
+  function updateBirdVisibility(){
+      d3.select('#leftBird').style('display',index > 0 ? 'block' : 'none')
+      d3.select('#rightBird').style('display', index < images.length - 1 ? 'block' : 'none')
+  }
+
+}
+
+
+    </script>
+</head>
+
+<body bgcolor="black" onload="init()">
+
+<center>
+
+<div id="home-link">
+<a href="../">
+<img src="../images/deer.png" />
+</a>
+<div>
+
+
+<div id="thumbnails">
+
+</div>
+
+<div id="carousel" style="display:none">
+<table height="600" width="950">
+<tr><td width="39">
+<img src="../images/bird_left.gif" width="39" height="56" alt="" border="0" style="cursor:pointer;display:none" id="leftBird">
+</td>
+<td width="10">&nbsp;</td>
+<td align="center">
+<img alt="" border="0" id="centreImage">
+</td>
+<td width="10">&nbsp;</td>
+<td width="39"><img src="../images/bird_right.gif" width="39" height="56" alt="" border="0" style="cursor:pointer" id="rightBird"></td>
+</tr>
+</table>
+</div>
+
+</center>
+</body>
+</html>
