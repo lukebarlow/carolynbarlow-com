@@ -43,12 +43,9 @@
         'two-dogs.jpg',
         'two-doves.jpg'
     ]
-
-
     var index = 0;
    
 function init(){
-
     d3.select('#thumbnails')
         .selectAll('img')
         .data(images)
@@ -62,16 +59,13 @@ function init(){
             d3.select('#carousel').style('display','block')
             d3.select('#centreImage').attr('src', 'images/' + d)
             updateBirdVisibility()
-
             d3.select('#home-link a').on('click', function(){
                 d3.event.preventDefault()
                 d3.select('#thumbnails').style('display','block')
                 d3.select('#carousel').style('display','none')
                 d3.select('#home-link a').on('click', function(){})
             })
-
         })
-
   d3.select('#leftBird').on('click', function(){
       index--
       if (index >= 0){
@@ -79,7 +73,6 @@ function init(){
       }
       updateBirdVisibility()
   })
-
   d3.select('#rightBird').on('click', function(){
       index++
       if (index <= images.length - 1){
@@ -87,15 +80,11 @@ function init(){
       }
       updateBirdVisibility()
   })
-
   function updateBirdVisibility(){
       d3.select('#leftBird').style('display',index > 0 ? 'block' : 'none')
       d3.select('#rightBird').style('display', index < images.length - 1 ? 'block' : 'none')
   }
-
 }
-
-
     </script>
 </head>
 

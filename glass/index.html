@@ -2,176 +2,171 @@
 
 <html>
 <head>
-  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-  <title>Glass and Prints by Carolyn Barlow</title>
-  <link rel="stylesheet" type="text/css" href="../carolynbarlow.css"></link>
-  <link rel="shortcut icon" href="../images/bird_right_icon.gif" type="image">
-  <style>
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <title>Glass and Prints by Carolyn Barlow</title>
+    <link rel="stylesheet" type="text/css" href="../carolynbarlow.css"></link>
+    <link rel="shortcut icon" href="../images/bird_right_icon.gif" type="image">
+    <script src="../d3.min.js"></script>
 
-
-
-  </style>
-  <script src="../d3.min.js"></script>
-
-  <script>
+    <script>
  
-  var images = [
-    '*blue_flowers.jpg',
-    'shipping_forecast.jpg',
-    'force_10_gale.jpg',
-    'may.jpg',
-    'birds.jpg',
-    '*july_2015.jpg',
-    '*rby.jpg',
-    '*sea_creatures.jpg',
-    'new-star.jpg',
-    '*Kippford-estuary.jpg',
-    'amber-forest.jpg',
-    'amber_forest-far.jpg',
-    '*blousy.jpg',
-    'blue-rose.jpg',
-    '*blue-spot.jpg',
-    'blue.jpg',
-    'blue_petals.jpg',
-    '*blue_spiral.jpg',
-    '*brown.jpg',
-    'cat.jpg',
-    '*cheers-to-galloway.jpg',
-    '*circle.jpg',
-    'crushed-gold.jpg',
-    'deepa-jpg.jpg',
-    'deer.jpg',
-    '*door.jpg',
-    '*drips.jpg',
-    '*earth-on-fire.jpg',
-    '*feather.jpg',
-    '*flames.jpg',
-    '*forest-half-dog.jpg',
-    '*fox.jpg',
-    'from-the-north.jpg',
-    '*fruit.jpg',
-    '*galloway-burn.jpg',
-    'growing.jpg',
-    'hare.jpg',
-    '*heath-fire.jpg',
-    '*hestan.jpg',
-    '*into-the-blue.jpg',
-    "john's-fire.jpg",
-    'kites.jpg',
-    '*leaves-on-a-journey.jpg',
-    'lemon.jpg',
-    '*mmm-colours.jpg',
-    '*orange-twirl.jpg',
-    '*oranges.jpg',
-    '*paralympics.jpg',
-    'peacock.jpg',
-    '*pearl.jpg',
-    '*red-tops.jpg',
-    'roddys-triangle.jpg',
-    '*sarajevo-doves.jpg',
-    'socks.jpg',
-    'squiggle.jpg',
-    '*sun-space.jpg',
-    '*sun-spot.jpg',
-    '*sun.jpg',
-    'swallow-detail.jpg',
-    'swallow-door.jpg',
-    'swallow_flight.jpg',
-    'tibetans-2012.jpg',
-    'triangle-pink-plant.jpg',
-    '*triangle-tops.jpg',
-    '*two_stalks.jpg',
-    '*violin.jpg',
-    'washing-detail.jpg',
-    '*washing-line-triptych.jpg',
-    'wavelines.jpg',
-    '*wee-beasties.jpg',
-    '*weed-seeds.jpg',
-    '*workshop-end.jpg',
-    '*workshop-trees.jpg',
-    '*workshop-window.jpg',
-    '*arctic-fox-flicks-his-tail.jpg',
-    'fused-green-and-blue-glass.jpg',
-    'leaping-deer.jpg',
-    '*plant-circle.jpg',
-    '*oct-nov-2015.jpg',
-    '*tree.jpg',
-    '*windsurfer.jpg',
-    'october-november.jpg',
-    'sep-2015.jpg'
-  ]
+    var images = [
+        '*blue_flowers.jpg',
+        'shipping_forecast.jpg',
+        'force_10_gale.jpg',
+        'may.jpg',
+        'birds.jpg',
+        '*july_2015.jpg',
+        '*rby.jpg',
+        '*sea_creatures.jpg',
+        'new-star.jpg',
+        '*Kippford-estuary.jpg',
+        'amber-forest.jpg',
+        'amber_forest-far.jpg',
+        '*blousy.jpg',
+        'blue-rose.jpg',
+        '*blue-spot.jpg',
+        'blue.jpg',
+        'blue_petals.jpg',
+        '*blue_spiral.jpg',
+        '*brown.jpg',
+        'cat.jpg',
+        '*cheers-to-galloway.jpg',
+        '*circle.jpg',
+        'crushed-gold.jpg',
+        'deepa-jpg.jpg',
+        'deer.jpg',
+        '*door.jpg',
+        '*drips.jpg',
+        '*earth-on-fire.jpg',
+        '*feather.jpg',
+        '*flames.jpg',
+        '*forest-half-dog.jpg',
+        '*fox.jpg',
+        'from-the-north.jpg',
+        '*fruit.jpg',
+        '*galloway-burn.jpg',
+        'growing.jpg',
+        'hare.jpg',
+        '*heath-fire.jpg',
+        '*hestan.jpg',
+        '*into-the-blue.jpg',
+        "john's-fire.jpg",
+        'kites.jpg',
+        '*leaves-on-a-journey.jpg',
+        'lemon.jpg',
+        '*mmm-colours.jpg',
+        '*orange-twirl.jpg',
+        '*oranges.jpg',
+        '*paralympics.jpg',
+        'peacock.jpg',
+        '*pearl.jpg',
+        '*red-tops.jpg',
+        'roddys-triangle.jpg',
+        '*sarajevo-doves.jpg',
+        'socks.jpg',
+        'squiggle.jpg',
+        '*sun-space.jpg',
+        '*sun-spot.jpg',
+        '*sun.jpg',
+        'swallow-detail.jpg',
+        'swallow-door.jpg',
+        'swallow_flight.jpg',
+        'tibetans-2012.jpg',
+        'triangle-pink-plant.jpg',
+        '*triangle-tops.jpg',
+        '*two_stalks.jpg',
+        '*violin.jpg',
+        'washing-detail.jpg',
+        '*washing-line-triptych.jpg',
+        'wavelines.jpg',
+        '*wee-beasties.jpg',
+        '*weed-seeds.jpg',
+        '*workshop-end.jpg',
+        '*workshop-trees.jpg',
+        '*workshop-window.jpg',
+        '*arctic-fox-flicks-his-tail.jpg',
+        'fused-green-and-blue-glass.jpg',
+        'leaping-deer.jpg',
+        '*plant-circle.jpg',
+        '*oct-nov-2015.jpg',
+        '*tree.jpg',
+        '*windsurfer.jpg',
+        'october-november.jpg',
+        'sep-2015.jpg'
+    ]
 
-  var index = 0;
-  
+    var index = 0;
+    
 function init(){
 
-  images = images.map(function(name){
-    var sold = name.slice(0, 1) == '*'
-    var name = sold ? name.slice(1) : name
-    return {
-      name : name,
-      sold : sold
-    }
-  })
-
-  d3.select('#thumbnails')
-    .selectAll('img')
-    .data(images)
-    .enter()
-    .append('span')
-    .append('img')
-    .attr('src', function(d){return 'thumbnails/' + d.name})
-    .on('click', function(d, i){
-      index = i
-      d3.select('#thumbnails').style('display','none')
-      d3.select('#carousel').style('display','block')
-      d3.select('#centreImage').attr('src', 'images/' + d.name)
-      updateBirdVisibility()
-
-      d3.select('#home-link a').on('click', function(){
-        d3.event.preventDefault()
-        d3.select('#thumbnails').style('display','block')
-        d3.select('#carousel').style('display','none')
-        d3.select('#home-link a').on('click', function(){})
-      })
-
+    images = images.map(function(name){
+        var sold = name.slice(0, 1) == '*'
+        var name = sold ? name.slice(1) : name
+        return {
+            name : name,
+            sold : sold
+        }
     })
 
-  d3.selectAll('#thumbnails > span')
-    .filter(function(d){ return d.sold})
-    .classed('sold', true)
-    .append('span')
-    .append('span')
-    .append('img')
-    .attr('class', 'dot')
-    .attr('src', 'sold.png')
-    
+    d3.select('#thumbnails')
+        .selectAll('img')
+        .data(images)
+        .enter()
+        .append('span')
+        .append('img')
+        .attr('src', function(d){return 'thumbnails/' + d.name})
+        .on('click', function(d, i){
+            index = i
+            d3.select('#thumbnails').style('display','none')
+            d3.select('#carousel').style('display','block')
+            d3.select('#centreImage').attr('src', 'images/' + d.name)
+            updateBirdVisibility()
+
+            d3.select('#home-link a').on('click', function(){
+                d3.event.preventDefault()
+                d3.select('#thumbnails').style('display','block')
+                d3.select('#carousel').style('display','none')
+                d3.select('#home-link a').on('click', function(){})
+            })
+
+        })
+
+    d3.selectAll('#thumbnails > span')
+        .filter(function(d){ return d.sold})
+        .classed('sold', true)
+        .append('span')
+        .append('span')
+        .append('img')
+        .attr('class', 'dot')
+        .attr('src', 'sold.png')
+
   d3.select('#leftBird').on('click', function(){
-    index--
-    if (index >= 0){
-      d3.select('#centreImage').attr('src', 'images/' + images[index].name)
-    }
-    updateBirdVisibility()
+      index--
+      if (index >= 0){
+          d3.select('#centreImage').attr('src', 'images/' + images[index].name)
+      }
+      updateBirdVisibility()
   })
 
   d3.select('#rightBird').on('click', function(){
-    index++
-    if (index <= images.length - 1){
-      d3.select('#centreImage').attr('src', 'images/' + images[index].name)
-    }
-    updateBirdVisibility()
+      index++
+      if (index <= images.length - 1){
+          d3.select('#centreImage').attr('src', 'images/' + images[index].name)
+      }
+      updateBirdVisibility()
   })
 
   function updateBirdVisibility(){
-    d3.select('#leftBird').style('display',index > 0 ? 'block' : 'none')
-    d3.select('#rightBird').style('display', index < images.length - 1 ? 'block' : 'none')
+      d3.select('#leftBird').style('display',index > 0 ? 'block' : 'none')
+      d3.select('#rightBird').style('display', index < images.length - 1 ? 'block' : 'none')
   }
 
 }
 
 
 
-  </script>
+    </script>
 </head>
 
 <body bgcolor="black" onload="init()">

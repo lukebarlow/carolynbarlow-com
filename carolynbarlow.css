@@ -54,9 +54,11 @@ a {
   max-height: 550px;
 }
 
+/*
 #thumbnails span.sold {
   padding-right: 0px;
 }
+*/
 
 .dot {
   width: 10px;
@@ -64,4 +66,5 @@ a {
   position: relative;
   left: -5px;
   top: 5px;
+  display: none;
 }
